@@ -58,6 +58,7 @@ spec:
           - -nginx-plus
           - -nginx-configmaps=$(POD_NAMESPACE)/nginx-config
           - -default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret
+          - -enable-cert-manager
          #- -enable-app-protect
          #- -enable-app-protect-dos
          #- -v=3 # Enables extensive logging. Useful for troubleshooting.
@@ -65,3 +66,4 @@ spec:
          #- -external-service=nginx-ingress
          #- -enable-prometheus-metrics
          #- -global-configuration=$(POD_NAMESPACE)/nginx-configuration
+         #- -enable-cert-manager

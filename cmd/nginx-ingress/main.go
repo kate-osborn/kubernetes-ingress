@@ -184,7 +184,7 @@ var (
 
 	enableLatencyMetrics = flag.Bool("enable-latency-metrics", false,
 		"Enable collection of latency metrics for upstreams. Requires -enable-prometheus-metrics")
-	
+
 	enableCertManager = flag.Bool("enable-cert-manager", false,
 		"Enable cert-manager controller for VirtualServer resources. Requires -enable-custom-resources")
 
@@ -657,6 +657,7 @@ func main() {
 		KubeClient:                   kubeClient,
 		ConfClient:                   confClient,
 		DynClient:                    dynClient,
+		RestConfig:                   config,
 		ResyncPeriod:                 30 * time.Second,
 		Namespace:                    *watchNamespace,
 		NginxConfigurator:            cnf,
